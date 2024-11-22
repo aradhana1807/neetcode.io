@@ -2,24 +2,31 @@
 #include <vector>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    bool isAnagram(string s, string t) {
-        if (s.length() != t.length()) return false;
+    bool isAnagram(string s, string t)
+    {
+        if (s.length() != t.length())
+            return false;
         vector<int> vec(26, 0);
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < s.length(); i++)
+        {
             vec[s[i] - 'a']++;
             vec[t[i] - 'a']--;
         }
-        
-        for (int i = 0; i < 26; i++) {
-            if (vec[i] != 0) return false;
+
+        for (int i = 0; i < 26; i++)
+        {
+            if (vec[i] != 0)
+                return false;
         }
         return true;
     }
 };
 
-int main() {
+int main()
+{
     Solution s;
     cout << s.isAnagram("anagram", "nagaram") << endl;
     return 0;
