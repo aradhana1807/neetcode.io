@@ -5,6 +5,18 @@ using namespace std;
 class Solution
 {
 public:
+  /**
+   * @brief Finds the index of the peak element in a mountain array.
+   *
+   * A mountain array is defined as an array that is first strictly increasing
+   * and then strictly decreasing.
+   *
+   * Time complexity: O(log n)
+   * Space complexity: O(1)
+   *
+   * @param arr the input mountain array
+   * @return the index of the peak element
+   */
   int peakIndexInMountainArray(vector<int> &arr)
   {
     int start = 0;

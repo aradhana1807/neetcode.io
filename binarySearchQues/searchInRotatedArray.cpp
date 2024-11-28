@@ -2,6 +2,17 @@
 #include <vector>
 using namespace std;
 
+/**
+ * Searches for the index of a target value in a rotated sorted array.
+ *
+ * This function uses a binary search algorithm to efficiently locate the target value
+ * within the given vector of integers sorted in either ascending or descending order.
+ *
+ * @param nums A vector of integers sorted in either ascending or descending order.
+ * @param n The size of the array.
+ * @param target The target integer value to search for in the array.
+ * @return The index of the target value if found, otherwise returns -1.
+ */
 int searchInRotatednumsay(vector<int> &nums, int n, int target)
 {
   int start = 0, end = n - 1;

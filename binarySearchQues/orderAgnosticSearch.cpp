@@ -5,6 +5,17 @@ using namespace std;
 class Solution
 {
 public:
+  /**
+   * @brief Searches for the index of a target value in a sorted array.
+   *
+   * This function performs a binary search on a sorted array to find the target value.
+   * It handles both ascending and descending order arrays by determining the order
+   * based on the first and last elements of the array.
+   *
+   * @param nums A vector of integers sorted in either ascending or descending order.
+   * @param target The target integer value to search for in the array.
+   * @return The index of the target value if found, otherwise returns -1.
+   */
   int orderAgnosticSearch(vector<int> &nums, int target)
   {
     int start = 0;

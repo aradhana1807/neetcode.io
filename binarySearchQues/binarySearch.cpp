@@ -5,6 +5,13 @@ using namespace std;
 class Solution
 {
 public:
+  /**
+   * Searches for a target in a sorted array of integers using binary search.
+   *
+   * @param nums a sorted array of integers
+   * @param target the target to search for
+   * @return the index of the target if found, -1 otherwise
+   */
   int search(vector<int> &nums, int target)
   {
     int start = 0;

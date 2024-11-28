@@ -5,6 +5,16 @@ using namespace std;
 class Solution
 {
 public:
+  /**
+   * @brief Searches for the index of a target value in a sorted array in descending order.
+   *
+   * This function uses a binary search algorithm to efficiently locate the target value
+   * within the given vector of integers sorted in descending order.
+   *
+   * @param nums A vector of integers sorted in descending order.
+   * @param target The target integer value to search for in the array.
+   * @return The index of the target value if found, otherwise returns -1.
+   */
   int descSortedArray(vector<int> &nums, int target)
   {
     int start = 0, end = nums.size() - 1;

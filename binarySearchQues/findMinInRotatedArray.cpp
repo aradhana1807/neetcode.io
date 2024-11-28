@@ -5,6 +5,15 @@ using namespace std;
 class Solution
 {
 public:
+  /**
+   * Finds the minimum element in a rotated sorted array of distinct integers.
+   *
+   * Time complexity: O(log n)
+   * Space complexity: O(1)
+   *
+   * @param nums a rotated sorted array of distinct integers
+   * @return the index of the minimum element
+   */
   int findMin(vector<int> &nums)
   {
     int n = nums.size();

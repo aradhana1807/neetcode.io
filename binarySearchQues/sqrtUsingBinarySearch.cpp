@@ -25,6 +25,13 @@ long long int binarySearch(int n)
   return ans;
 }
 
+/**
+ * @brief Computes the integer square root of a given number using binary search.
+ *
+ * @param num the number to compute the square root of
+ *
+ * @returns the integer square root of @p num
+ */
 int sqrtUsingBS(int num)
 {
   return binarySearch(num);
