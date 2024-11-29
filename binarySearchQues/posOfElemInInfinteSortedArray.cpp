@@ -38,18 +38,6 @@ int posOfElemInInfinteSortedArray(vector<int> &nums, int target)
   return binarySearch(nums, target, low, high);
 }
 
-/**
- * @brief Main function
- *
- * Tests the function posOfElemInInfinteSortedArray by searching for the
- * index of the target element in a given infinite sorted array.
- *
- * @param[in] nums The infinite sorted array of integers.
- * @param[in] target The target element to search for.
- *
- * @returns The index of the target element in the array if found, or -1 if
- * not found.
- */
 int main()
 {
   vector<int> nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};

@@ -7,11 +7,12 @@ long long int binarySearch(int n)
   long long int ans = -1;
   while (start <= end)
   {
-    int sqr = mid * mid;
+    long long int sqr = mid * mid;
     /* code */
     if (sqr == n)
       return mid;
-    if (sqr < n)
+      
+    else if (sqr < n)
     {
       ans = mid;
       start = mid + 1;
@@ -32,7 +33,7 @@ int sqrtUsingBS(int num)
 
 int main()
 {
-  int num = 36;
+  int num = 2147395599;
   cout << sqrtUsingBS(num) << endl;
   return 0;
 }
