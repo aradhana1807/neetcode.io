@@ -17,7 +17,7 @@ using namespace std;
  * Time complexity: O(n log k)
  * Space complexity: O(k)
  */
-void topKFrequent(vector<int> &nums, int k)
+vector<int> topKFrequent(vector<int> &nums, int k)
 {
   unordered_map<int, int> mp;
 
@@ -27,6 +27,7 @@ void topKFrequent(vector<int> &nums, int k)
   }
 
   priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> minH;
+  vector<int> ans;
 
   for (auto i = mp.begin(); i != mp.end(); i++)
   {
@@ -39,9 +40,12 @@ void topKFrequent(vector<int> &nums, int k)
 
   while (minH.size() != 0)
   {
-    cout << minH.top().second << " ";
+    // cout << minH.top().second << " ";
+    ans.push_back(minH.top().second);
     minH.pop();
   }
+
+  return ans;
 }
 
 int main()
