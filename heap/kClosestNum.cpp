@@ -1,6 +1,7 @@
+#include <bits/stdc++.h>
+
 #include <iostream>
 #include <vector>
-#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -15,35 +16,29 @@ using namespace std;
  * Time complexity: O(n log k)
  * Space complexity: O(k)
  */
-vector<int> kClosestx(vector<int> arr, int x, int k)
-{
+vector<int> kClosestx(vector<int> arr, int x, int k) {
   priority_queue<pair<int, int>> pq;
   vector<int> ans;
-  for (int i = 0; i < arr.size(); i++)
-  {
+  for (int i = 0; i < arr.size(); i++) {
     pq.push({abs(x - arr[i]), arr[i]});
-    if (pq.size() > k)
-    {
+    if (pq.size() > k) {
       pq.pop();
     }
   }
 
-  while (pq.size() > 0)
-  {
+  while (pq.size() > 0) {
     ans.push_back(pq.top().second);
     pq.pop();
   }
   return ans;
 }
 
-int main()
-{
+int main() {
   vector<int> arr = {5, 6, 7, 8, 9};
   int x = 7;
   int k = 3;
   vector<int> ans = kClosestx(arr, x, k);
-  for (int i = 0; i < ans.size(); i++)
-  {
+  for (int i = 0; i < ans.size(); i++) {
     cout << ans[i] << " ";
   }
   return 0;

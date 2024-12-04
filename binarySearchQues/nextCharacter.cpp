@@ -12,23 +12,18 @@ using namespace std;
  *         If no such character exists, returns the first character in the list.
  */
 
-char nextGreatestLetter(vector<char> &letters, char target)
-{
+char nextGreatestLetter(vector<char> &letters, char target) {
   int res = -1;
   int n = letters.size();
   int start = 0, end = n - 1, mid;
 
-  while (start <= end)
-  {
+  while (start <= end) {
     mid = start + (end - start) / 2;
 
-    if (letters[mid] > target)
-    {
+    if (letters[mid] > target) {
       res = mid;
       end = mid - 1;
-    }
-    else
-    {
+    } else {
       start = mid + 1;
     }
   }
@@ -39,8 +34,7 @@ char nextGreatestLetter(vector<char> &letters, char target)
   return letters[res];
 }
 
-int main()
-{
+int main() {
   vector<char> letters = {'a', 'c', 'f', 'j', 'k'};
   char target = 'f';
   cout << nextGreatestLetter(letters, target) << endl;

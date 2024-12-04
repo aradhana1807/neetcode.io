@@ -1,0 +1,23 @@
+# .clang-format Configuration Example
+BasedOnStyle: Google
+UseTab: Never
+ColumnLimit: 120
+
+# Add space before control statements like if, while
+EmptyLineBeforeControlStatements: true
+
+# Prevent single-line 'if' statements
+AllowShortIfStatementsOnASingleLine: false
+
+# Place opening brace on the same line as 'if' or 'else' (K&R style)
+BreakBeforeBraces: Attach
+
+# Prevent 'else' from appearing on the same line as the closing brace
+AllowShortElseIfStatementsOnASingleLine: false
+
+# Indentation settings (only specify once)
+IndentWidth: 2
+TabWidth: 4
+
+# Control spacing around C-style casts (optional, if you use them)
+SpaceAfterCStyleCast: true

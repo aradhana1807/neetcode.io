@@ -2,9 +2,8 @@
 #include <vector>
 using namespace std;
 
-class Solution
-{
-public:
+class Solution {
+ public:
   /**
    * @brief Finds the index of the peak element in a mountain array.
    *
@@ -17,21 +16,16 @@ public:
    * @param arr the input mountain array
    * @return the index of the peak element
    */
-  int peakIndexInMountainArray(vector<int> &arr)
-  {
+  int peakIndexInMountainArray(vector<int> &arr) {
     int start = 0;
     int end = arr.size() - 1;
 
-    while (start < end)
-    {
+    while (start < end) {
       int mid = start + (end - start) / 2;
 
-      if (arr[mid] > arr[mid + 1])
-      {
+      if (arr[mid] > arr[mid + 1]) {
         end = mid;
-      }
-      else
-      {
+      } else {
         start = mid + 1;
       }
       mid = start + (end - start) / 2;
@@ -41,8 +35,7 @@ public:
   }
 };
 
-int main()
-{
+int main() {
   Solution s;
   vector<int> nums = {0, 1, 0};
   cout << s.peakIndexInMountainArray(nums) << endl;

@@ -1,6 +1,7 @@
+#include <bits/stdc++.h>
+
 #include <iostream>
 #include <vector>
-#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -13,24 +14,18 @@ using namespace std;
  * @param max the maximum number of books a student can get.
  * @return true if the array can be distributed, false otherwise.
  */
-bool isValid(vector<int> &arr, int n, int k, int max)
-{
+bool isValid(vector<int> &arr, int n, int k, int max) {
   int student = 1;
   int sum = 0;
 
-  for (int i = 0; i < n; i++)
-  {
-    if (sum + arr[i] > max)
-    {
+  for (int i = 0; i < n; i++) {
+    if (sum + arr[i] > max) {
       student++;
       sum = arr[i];
-      if (student > k)
-      {
+      if (student > k) {
         return false;
       }
-    }
-    else
-    {
+    } else {
       sum += arr[i];
     }
   }
@@ -46,31 +41,25 @@ bool isValid(vector<int> &arr, int n, int k, int max)
  * @param k The number of students.
  * @return The minimum number of pages that can be assigned to each student.
  */
-int bookAlloaction(vector<int> &nums, int k)
-{
+int bookAlloaction(vector<int> &nums, int k) {
   int n = nums.size();
   int start = *max_element(nums.begin(), nums.end());
   int end = accumulate(nums.begin(), nums.end(), 0);
 
   int res = -1;
-  while (start <= end)
-  {
+  while (start <= end) {
     int mid = start + (end - start) / 2;
-    if (isValid(nums, n, k, mid))
-    {
+    if (isValid(nums, n, k, mid)) {
       res = mid;
       end = mid - 1;
-    }
-    else
-    {
+    } else {
       start = mid + 1;
     }
   }
   return res;
 }
 
-int main()
-{
+int main() {
   vector<int> nums = {10, 20, 30, 40};
   int k = 2;
   cout << bookAlloaction(nums, k) << endl;

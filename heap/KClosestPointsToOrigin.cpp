@@ -1,6 +1,7 @@
+#include <bits/stdc++.h>
+
 #include <iostream>
 #include <vector>
-#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -25,29 +26,24 @@ using namespace std;
  * @param points A vector of 2D points.
  * @param k The number of closest points to find.
  */
-void kClosest(vector<vector<int>> &points, int k)
-{
+void kClosest(vector<vector<int>> &points, int k) {
   priority_queue<pair<int, pair<int, int>>> maxh;
   pair<int, pair<int, int>> p;
-  for (int i = 0; i < points.size(); i++)
-  {
+  for (int i = 0; i < points.size(); i++) {
     maxh.push({points[i][0] * points[i][0] + points[i][1] * points[i][1], {points[i][0], points[i][1]}});
-    if (maxh.size() > k)
-    {
+    if (maxh.size() > k) {
       maxh.pop();
     }
   }
 
-  while (maxh.size() > 0)
-  {
+  while (maxh.size() > 0) {
     pair<int, int> p = maxh.top().second;
     cout << p.first << " " << p.second << endl;
     maxh.pop();
   }
 }
 
-int main()
-{
+int main() {
   vector<vector<int>> v = {{1, 3}, {-2, 2}, {5, 8}, {0, 1}};
   kClosest(v, 2);
   return 0;

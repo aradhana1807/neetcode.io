@@ -1,6 +1,7 @@
+#include <bits/stdc++.h>
+
 #include <iostream>
 #include <vector>
-#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -17,28 +18,23 @@ using namespace std;
  *
  * @return The sorted array of integers based on their frequency in descending order.
  */
-vector<int> freqSort(vector<int> &nums)
-{
+vector<int> freqSort(vector<int> &nums) {
   int n = nums.size();
   unordered_map<int, int> freq;
-  for (int i = 0; i < n; i++)
-  {
+  for (int i = 0; i < n; i++) {
     freq[nums[i]]++;
   }
 
   priority_queue<pair<int, int>> maxh;
-  for (auto i = freq.begin(); i != freq.end(); i++)
-  {
+  for (auto i = freq.begin(); i != freq.end(); i++) {
     maxh.push({i->second, i->first});
   }
 
   vector<int> ans;
-  while (maxh.size() > 0)
-  {
+  while (maxh.size() > 0) {
     int freq = maxh.top().first;
     int num = maxh.top().second;
-    for (int i = 1; i <= freq; i++)
-    {
+    for (int i = 1; i <= freq; i++) {
       ans.push_back(num);
     }
     maxh.pop();
@@ -47,12 +43,10 @@ vector<int> freqSort(vector<int> &nums)
   return ans;
 }
 
-int main()
-{
+int main() {
   vector<int> nums = {1, 1, 1, 3, 2, 2, 4};
   vector<int> ans = freqSort(nums);
-  for (int i = 0; i < ans.size(); i++)
-  {
+  for (int i = 0; i < ans.size(); i++) {
     cout << ans[i] << " ";
   }
 }

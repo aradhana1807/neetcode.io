@@ -2,38 +2,27 @@
 #include <vector>
 using namespace std;
 
-int searchInRotatednumsay(vector<int> &nums, int n, int target)
-{
+int searchInRotatednumsay(vector<int> &nums, int n, int target) {
   int start = 0, end = n - 1;
-  while (start <= end)
-  {
+  while (start <= end) {
     int mid = start + (end - start) / 2;
 
-    if (nums[mid] == target)
-    {
+    if (nums[mid] == target) {
       return mid;
     }
 
-    if (nums[start] <= nums[mid])
-    {
-      if (target >= nums[start] && target <= nums[mid])
-      {
+    if (nums[start] <= nums[mid]) {
+      if (target >= nums[start] && target <= nums[mid]) {
         end = mid - 1;
-      }
-      else
-      {
+      } else {
         start = mid + 1;
       }
     }
 
-    else
-    {
-      if (target >= nums[mid] && target <= nums[end])
-      {
+    else {
+      if (target >= nums[mid] && target <= nums[end]) {
         start = mid + 1;
-      }
-      else
-      {
+      } else {
         end = mid - 1;
       }
     }
@@ -43,8 +32,7 @@ int searchInRotatednumsay(vector<int> &nums, int n, int target)
   return -1;
 }
 
-int main()
-{
+int main() {
   vector<int> nums = {4, 5, 6, 7, 1, 2};
   int n = nums.size();
   int target = 2;

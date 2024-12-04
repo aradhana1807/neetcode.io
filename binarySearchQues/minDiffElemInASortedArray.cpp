@@ -19,40 +19,33 @@ using namespace std;
  * @returns The element in the array that has the minimum difference with the target value.
  */
 
-int minDiffElemInASortedArray(vector<int> &nums, int target)
-{
+int minDiffElemInASortedArray(vector<int> &nums, int target) {
   int start = 0, end = nums.size() - 1;
 
-  while (start <= end)
-  {
+  while (start <= end) {
     int mid = start + (end - start) / 2;
 
-    if (target == nums[mid])
-    {
+    if (target == nums[mid]) {
       return nums[mid];
     }
 
     else if (target < nums[mid])
       end = mid - 1;
-    else
-    {
+    else {
       start = mid + 1;
     }
   }
 
-  if ((abs(nums[start] - target) < (abs(nums[end] - target))))
-  {
+  if ((abs(nums[start] - target) < (abs(nums[end] - target)))) {
     return nums[start];
   }
 
-  else
-  {
+  else {
     return nums[end];
   }
 }
 
-int main()
-{
+int main() {
   vector<int> nums = {1, 2, 3, 4, 10, 11, 14, 15, 16};
   int target = 13;
   cout << minDiffElemInASortedArray(nums, target) << endl;

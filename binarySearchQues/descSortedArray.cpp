@@ -2,9 +2,8 @@
 #include <vector>
 using namespace std;
 
-class Solution
-{
-public:
+class Solution {
+ public:
   /**
    * @brief Searches for the index of a target value in a sorted array in descending order.
    *
@@ -15,26 +14,21 @@ public:
    * @param target The target integer value to search for in the array.
    * @return The index of the target value if found, otherwise returns -1.
    */
-  int descSortedArray(vector<int> &nums, int target)
-  {
+  int descSortedArray(vector<int> &nums, int target) {
     int start = 0, end = nums.size() - 1;
 
-    while (start <= end)
-    {
+    while (start <= end) {
       int mid = start + (end - start) / 2;
 
-      if (nums[mid] == target)
-      {
+      if (nums[mid] == target) {
         return mid;
       }
 
-      else if (nums[mid] > target)
-      {
+      else if (nums[mid] > target) {
         start = mid + 1;
       }
 
-      else
-      {
+      else {
         end = mid - 1;
       }
     }
@@ -43,8 +37,7 @@ public:
   }
 };
 
-int main()
-{
+int main() {
   Solution s;
   vector<int> nums = {20, 17, 15, 14, 12, 9, 8, 6, 4};
   int target = 4;

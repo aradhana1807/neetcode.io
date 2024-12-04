@@ -1,9 +1,8 @@
 #include <iostream>
 using namespace std;
 
-class Solution
-{
-public:
+class Solution {
+ public:
   /**
    * Finds the pivot element of a rotated sorted array.
    *
@@ -14,22 +13,18 @@ public:
    * @param n the size of the array
    * @return the index of the pivot element
    */
-  int findPivot(int arr[], int n)
-  {
+  int findPivot(int arr[], int n) {
     int start = 0;
     int end = n - 1;
 
-    while (start < end)
-    {
+    while (start < end) {
       int mid = start + (end - start) / 2;
 
-      if (arr[mid] >= arr[0])
-      {
+      if (arr[mid] >= arr[0]) {
         start = mid + 1;
       }
 
-      else
-      {
+      else {
         end = mid;
       }
 

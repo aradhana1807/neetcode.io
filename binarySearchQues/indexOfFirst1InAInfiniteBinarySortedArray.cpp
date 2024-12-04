@@ -2,25 +2,20 @@
 #include <vector>
 using namespace std;
 
-int firstOccurence(vector<int> &nums, int target, int start, int end)
-{
+int firstOccurence(vector<int> &nums, int target, int start, int end) {
   int res = -1;
-  while (start <= end)
-  {
+  while (start <= end) {
     int mid = start + (end - start) / 2;
-    if (target == nums[mid])
-    {
+    if (target == nums[mid]) {
       res = mid;
       end = mid - 1;
     }
 
-    else if (target < nums[mid])
-    {
+    else if (target < nums[mid]) {
       end = mid - 1;
     }
 
-    else
-    {
+    else {
       start = mid + 1;
     }
   }
@@ -39,11 +34,9 @@ int firstOccurence(vector<int> &nums, int target, int start, int end)
  *
  * @returns The index of the first occurrence of the target value if found, otherwise returns -1.
  */
-int indexOfFirst1InAInfiniteBinarySortedArray(vector<int> &nums, int target)
-{
+int indexOfFirst1InAInfiniteBinarySortedArray(vector<int> &nums, int target) {
   int low = 0, high = 1;
-  while (target > nums[high])
-  {
+  while (target > nums[high]) {
     low = high;
     high = high * 2;
   }
@@ -51,8 +44,7 @@ int indexOfFirst1InAInfiniteBinarySortedArray(vector<int> &nums, int target)
   return firstOccurence(nums, target, low, high);
 }
 
-int main()
-{
+int main() {
   vector<int> nums = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1};
   vector<int> nums2 = {0, 1, 1, 1, 1, 1};
   int target = 1;

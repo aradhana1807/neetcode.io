@@ -7,23 +7,18 @@ using namespace std;
  *
  * @returns The integer square root of @p n, or -1 if no such square root exists.
  */
-long long int sqrtInteger(int n)
-{
+long long int sqrtInteger(int n) {
   int start = 0, end = n;
   long long int mid = start + (end - start) / 2;
   long long int ans = -1;
-  while (start <= end)
-  {
+  while (start <= end) {
     int sqr = mid * mid;
     if (sqr == n)
       return mid;
-    if (sqr < n)
-    {
+    if (sqr < n) {
       ans = mid;
       start = mid + 1;
-    }
-    else
-    {
+    } else {
       end = mid - 1;
     }
     mid = start + (end - start) / 2;
@@ -42,22 +37,18 @@ long long int sqrtInteger(int n)
  * @param tempSol The initial integer approximation of the square root of `n`.
  * @return A double representing the square root of `n` refined to the specified precision.
  */
-double morePrecision(int n, int precision, int tempSol)
-{
+double morePrecision(int n, int precision, int tempSol) {
   double factor = 1;
   double ans = tempSol;
-  for (int i = 0; i < precision; i++)
-  {
+  for (int i = 0; i < precision; i++) {
     factor = factor / 10;
-    for (double j = ans; j * j < n; j = j + factor)
-    {
+    for (double j = ans; j * j < n; j = j + factor) {
       ans = j;
     }
   }
   return ans;
 }
-int main()
-{
+int main() {
   int n;
   cout << "Enter any number: " << endl;
   cin >> n;

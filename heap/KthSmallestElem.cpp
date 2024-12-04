@@ -1,7 +1,8 @@
+#include <bits/stdc++.h>
+
 #include <iostream>
 #include <queue>
 #include <vector>
-#include <bits/stdc++.h>
 using namespace std;
 
 /**
@@ -20,16 +21,13 @@ using namespace std;
  * @return The kth smallest element in the array.
  */
 
-int kThSmallestElem(vector<int> &arr, int k)
-{
+int kThSmallestElem(vector<int> &arr, int k) {
   priority_queue<int> maxh;
   int n = arr.size();
 
-  for (int i = 0; i < n; i++)
-  {
+  for (int i = 0; i < n; i++) {
     maxh.push(arr[i]);
-    if (maxh.size() > k)
-    {
+    if (maxh.size() > k) {
       maxh.pop();
     }
   }
@@ -37,9 +35,7 @@ int kThSmallestElem(vector<int> &arr, int k)
   return maxh.top();
 }
 
-int main()
-{
-
+int main() {
   vector<int> arr = {2, 5, 6, 3, 1, 9, 8};
   int k = 3;
   cout << kThSmallestElem(arr, k) << endl;

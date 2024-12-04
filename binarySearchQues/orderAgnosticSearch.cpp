@@ -2,9 +2,8 @@
 #include <vector>
 using namespace std;
 
-class Solution
-{
-public:
+class Solution {
+ public:
   /**
    * @brief Searches for the index of a target value in a sorted array.
    *
@@ -16,39 +15,28 @@ public:
    * @param target The target integer value to search for in the array.
    * @return The index of the target value if found, otherwise returns -1.
    */
-  int orderAgnosticSearch(vector<int> &nums, int target)
-  {
+  int orderAgnosticSearch(vector<int> &nums, int target) {
     int start = 0;
     int end = nums.size() - 1;
 
     bool isAscending = nums[start] < nums[end];
 
-    while (start <= end)
-    {
+    while (start <= end) {
       int mid = start + (end - start) / 2;
 
       if (nums[mid] == target)
         return mid;
 
-      if (isAscending)
-      {
-        if (nums[mid] < target)
-        {
+      if (isAscending) {
+        if (nums[mid] < target) {
           start = mid + 1;
-        }
-        else
-        {
+        } else {
           end = mid - 1;
         }
-      }
-      else
-      {
-        if (nums[mid] < target)
-        {
+      } else {
+        if (nums[mid] < target) {
           end = mid - 1;
-        }
-        else
-        {
+        } else {
           start = mid + 1;
         }
       }
@@ -59,8 +47,7 @@ public:
   }
 };
 
-int main()
-{
+int main() {
   Solution s;
   vector<int> nums1 = {7, 6, 5, 4, 3, 2, 1};
   vector<int> nums2 = {0, 1, 2, 3, 4};

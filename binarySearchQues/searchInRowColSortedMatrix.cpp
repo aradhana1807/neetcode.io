@@ -14,14 +14,12 @@ using namespace std;
  * second element is the column index of the target value if found, otherwise
  * returns {-1, -1}.
  */
-pair<int, int> searchMatrix(vector<vector<int>> &matrix, int target)
-{
-  int m = matrix.size();    // row
-  int n = matrix[0].size(); // column
-  int i = 0;                // row
-  int j = n - 1;            // column
-  while (i >= 0 && i < m && j >= 0 && j < n)
-  {
+pair<int, int> searchMatrix(vector<vector<int>> &matrix, int target) {
+  int m = matrix.size();     // row
+  int n = matrix[0].size();  // column
+  int i = 0;                 // row
+  int j = n - 1;             // column
+  while (i >= 0 && i < m && j >= 0 && j < n) {
     if (matrix[i][j] == target)
       return {i, j};
     else if (matrix[i][j] > target)
@@ -32,8 +30,7 @@ pair<int, int> searchMatrix(vector<vector<int>> &matrix, int target)
   return {-1, -1};
 }
 
-int main()
-{
+int main() {
   vector<vector<int>> matrix = {{1, 2, 3, 10}, {4, 5, 6, 20}, {7, 8, 9, 30}};
   int target = 7;
   pair<int, int> ans = searchMatrix(matrix, target);

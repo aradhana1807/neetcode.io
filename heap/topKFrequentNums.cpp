@@ -1,7 +1,8 @@
-#include <iostream>
-#include <vector>
-#include <queue>
 #include <bits/stdc++.h>
+
+#include <iostream>
+#include <queue>
+#include <vector>
 using namespace std;
 
 /**
@@ -17,29 +18,24 @@ using namespace std;
  * Time complexity: O(n log k)
  * Space complexity: O(k)
  */
-vector<int> topKFrequent(vector<int> &nums, int k)
-{
+vector<int> topKFrequent(vector<int> &nums, int k) {
   unordered_map<int, int> mp;
 
-  for (int i = 0; i < nums.size(); i++)
-  {
+  for (int i = 0; i < nums.size(); i++) {
     mp[nums[i]]++;
   }
 
   priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> minH;
   vector<int> ans;
 
-  for (auto i = mp.begin(); i != mp.end(); i++)
-  {
+  for (auto i = mp.begin(); i != mp.end(); i++) {
     minH.push({i->second, i->first});
-    if (minH.size() > k)
-    {
+    if (minH.size() > k) {
       minH.pop();
     }
   }
 
-  while (minH.size() != 0)
-  {
+  while (minH.size() != 0) {
     // cout << minH.top().second << " ";
     ans.push_back(minH.top().second);
     minH.pop();
@@ -48,8 +44,7 @@ vector<int> topKFrequent(vector<int> &nums, int k)
   return ans;
 }
 
-int main()
-{
+int main() {
   vector<int> nums = {1, 1, 1, 2, 2, 3};
   int k = 2;
   topKFrequent(nums, k);
