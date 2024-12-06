@@ -4,17 +4,17 @@
 #include <vector>
 using namespace std;
 
+
 /**
- * @brief Finds the next greater element to the right of each element in a given array.
- *
- * This function takes a given array and returns a new array where each element is the next
- * greater element to the right. If there is no greater element, the function returns -1.
+ * @brief Finds the nearest greater element to the right of each element in a given array.
  *
  * @param arr The given array.
  *
- * @returns A new array where each element is the next greater element to the right.
+ * @returns A new array where each element is the nearest greater element to the right of
+ * the corresponding element in the given array. If there is no greater element, the function
+ * returns -1.
  */
-vector<int> nextGreater(vector<int> &arr) {
+vector<int> nearestGreaterToRight(vector<int> &arr) {
   stack<int> st;
   vector<int> v;
   int n = arr.size();
@@ -52,9 +52,9 @@ vector<int> nextGreater(vector<int> &arr) {
 int main() {
   vector<int> v = {1, 3, 2, 4};
   vector<int> v1 = {4, 3, 2, 1};
-  vector<int> ans = nextGreater(v);
-  vector<int> ans1 = nextGreater(v1);
-  
+  vector<int> ans = nearestGreaterToRight(v);
+  vector<int> ans1 = nearestGreaterToRight(v1);
+
   for (int i = 0; i < ans.size(); i++) {
     cout << ans[i] << " ";
   }
