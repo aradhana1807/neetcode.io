@@ -1,1 +1,4 @@
 .vscode
+# .exe files
+*.exe
+**/*.exe

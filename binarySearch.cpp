@@ -24,3 +24,12 @@ class Solution {
     return -1;
   }
 };
+
+int main() {
+  Solution sol;
+  vector<int> nums = {-1, 0, 3, 5, 9, 12};
+  int target = 9;
+  int result = sol.search(nums, target);
+  cout << "Index: " << result << endl;
+  return 0;
+}
