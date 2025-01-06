@@ -31,3 +31,12 @@ class Solution {
     return -1;
   }
 };
+
+int main() {
+  Solution solution;
+  vector<int> nums = {-1, 0, 3, 5, 9, 12};
+  int target = 9;
+  int result = solution.search(nums, target);
+  cout << "Index of " << target << " is " << result << endl;
+  return 0;
+}
