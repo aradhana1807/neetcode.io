@@ -28,6 +28,17 @@ bool matrixSearch(vector<vector<int>> &mat, int target) {
 
 // optimized O(m + n)
 
+/**
+ * @brief Searches for the target value in a matrix that is sorted in both
+ * row-wise and column-wise order, starting from the top-right corner.
+ *
+ * @param mat A 2D vector of integers that is sorted in both row-wise and
+ * column-wise order.
+ * @param target The target value to search for in the matrix.
+ *
+ * @return True if the target value is found, false otherwise.
+ */
+
 bool matrixSearchOptmized(vector<vector<int>> &mat, int target) {
   int n = mat.size(), m = mat[0].size();
   int i = 0, j = m - 1;
